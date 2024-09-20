@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #my apps
     'home',
+    'laptops',
+    'cpu',
+    'gpu',
+    'Accessories',
 ]
 
 MIDDLEWARE = [
