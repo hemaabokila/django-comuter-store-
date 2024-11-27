@@ -1,0 +1,137 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-21 17:09+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+#: .\project\settings.py:73
+msgid "English"
+msgstr "الانجليزية"
+
+#: .\project\settings.py:74
+msgid "Arabic"
+msgstr "العربية"
+
+
+#: .\project\settings.py:XX
+msgid "All Rights Reserved"
+msgstr "جميع الحقوق محفوظة"
+
+#: .\project\settings.py:XX
+msgid "Search Results"
+msgstr "نتائج البحث"
+
+#: .\project\settings.py:XX
+msgid "Next"
+msgstr "التالي"
+
+#: .\project\settings.py:XX
+msgid "Page"
+msgstr "الصفحة"
+
+#: .\project\settings.py:XX
+msgid "Previous"
+msgstr "السابق"
+
+#: .\project\settings.py:XX
+msgid "No results match your search."
+msgstr "لا توجد نتائج تطابق البحث الخاص بك"
+
+#: .\project\settings.py:XX
+msgid "Contact Us"
+msgstr "تواصل معنا"
+
+#: .\project\settings.py:XX
+msgid "Name"
+msgstr "الاسم"
+
+#: .\project\settings.py:XX
+msgid "Email"
+msgstr "الايميل"
+
+#: .\project\settings.py:XX
+msgid "Subject"
+msgstr "الموضوع"
+
+#: .\project\settings.py:XX
+msgid "Message"
+msgstr "الرسالة"
+
+#: .\project\settings.py:XX
+msgid "Send"
+msgstr "ارسال"
+
+#: .\project\settings.py:XX
+msgid "Thank you"
+msgstr "شكرا لك"
+
+#: .\project\settings.py:XX
+msgid "Language"
+msgstr "اللغة"
+
+#: .\project\settings.py:XX
+msgid "There are no products currently available."
+msgstr "لا توجد منتجات حالياً."
+
+#: .\project\settings.py:XX
+msgid "Contact"
+msgstr "اتصال"
+
+#: .\project\settings.py:XX
+msgid "Sections"
+msgstr "الأقسام"
+
+#: .\project\settings.py:XX
+msgid "About Us"
+msgstr "من نحن"
+
+#: .\project\settings.py:XX
+msgid "Ezyat For Commuter’s And Laptops"
+msgstr "الزيات للكمبيوتر واللاب توب"
+
+#: .\project\settings.py:XX
+msgid "NEW"
+msgstr "جديد"
+
+#: .\project\settings.py:XX
+msgid "View"
+msgstr "عرض"
+
+#: .\project\settings.py:XX
+msgid "Products"
+msgstr "المنتجات"
+
+#: .\project\settings.py:XX
+msgid "In Stock"
+msgstr "متوفر في المخزون"
+
+#: .\project\settings.py:XX
+msgid "Color"
+msgstr "اللون"
+
+#: .\project\settings.py:XX
+msgid "Brand"
+msgstr "العلامة التجارية"
+
+#: .\project\settings.py:XX
+msgid "Categories"
+msgstr "الفئات"
+
+
+#: .\project\settings.py:XX
+msgid "Your message has been sent successfully. We will get back to you as soon as possible."
+msgstr "تم إرسال رسالتك بنجاح. سنقوم بالرد عليك في أقرب وقت ممكن"

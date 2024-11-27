@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% csrf_token %}
+{% load static %}
+{% block body %}
+<div class="section">
+	<div class="container">
+        <div class="row">
+            {% for product in collection %}
+            <div class="col-md-4 col-xs-6">
+                <div class="shop">
+                    <div class="shop-img">
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    </div>
+                    <div class="shop-body">
+                        <h3>{{ product.category.name }}<br>Collection</h3>
+                        <a href="{% url 'product' product.slug %}" class="cta-btn">{% trans "View" %}<i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <p>{% trans "There are no productes currently available." %}</p>
+            {% endfor %}
+        </div>
+	</div>
+</div>
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h3 class="title">New Products</h3>
+                    <div class="section-nav">
+                        <ul class="section-tab-nav tab-nav">
+                            <li class="active"><a data-toggle="tab" href="#tab1">Laptops</a></li>
+                            <li><a data-toggle="tab" href="#tab1">Smartphones</a></li>
+                            <li><a data-toggle="tab" href="#tab1">Cameras</a></li>
+                            <li><a data-toggle="tab" href="#tab1">Accessories</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="products-tabs">
+                        <div id="tab1" class="tab-pane active">
+                            <div class="products-slick" data-nav="#slick-nav-1">
+                                {% for product in latest_productes %}
+                                <div class="col-md-4 col-xs-6">
+                                    <div class="product">
+                                        <div class="product-img">
+                                            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                                            <div class="product-label">
+                                                <span class="sale">-30%</span>
+                                                <span class="new">{% trans "NEW" %}</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-body">
+                                            <p class="product-category">{{ product.category.name }}</p>
+                                            <h3 class="product-name"><a href="{% url 'product' product.slug %}">{{ product.name }}</a></h3>
+                                            <h4 class="product-price">${{ product.prise }}<del class="product-old-price">${{ product.prise }}</del></h4>
+                                            <div class="product-rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <a href="{% url 'product' product.slug %}" class="custom-link">
+                                        <div class="add-to-cart">
+                                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>{% trans "View" %}</button>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                {% empty %}
+                                <p>{% trans "There are no productes currently available." %}</p>
+                                {% endfor %}
+                            </div>
+                            <div id="slick-nav-1" class="products-slick-nav"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="hot-deal" class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="hot-deal">
+                    <ul class="hot-deal-countdown">
+                        <li>
+                            <div>
+                                <h3>02</h3>
+                                <span>Days</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h3>10</h3>
+                                <span>Hours</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h3>34</h3>
+                                <span>Mins</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h3>60</h3>
+                                <span>Secs</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <h2 class="text-uppercase">hot deal this week</h2>
+                    <p>New Collection Up to 50% OFF</p>
+                    <a class="primary-btn cta-btn" href="#">Shop now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock body %}

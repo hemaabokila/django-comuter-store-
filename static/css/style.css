@@ -2130,6 +2130,34 @@ textarea.input {
   position: static;
   margin: 15px 0px;
 }
+.today-visits-value {
+  font-size: 1.2rem;
+  color: #28a745;
+  font-weight: bold;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.today-visits-value p {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.today-visits-value i {
+  margin-right: 10px;
+  font-size: 1.5rem;
+  color: #007bff;
+}
+
+.counter {
+  font-size: 1.5rem;
+  color: #ff5733;
+  font-weight: bold;
+}
 
 /*=========================================================
 	13 -> RESPONSIVE

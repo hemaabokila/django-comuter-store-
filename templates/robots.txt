@@ -1,0 +1,15 @@
+User-agent: *
+Disallow: /admin/
+Allow: /
+
+Allow: /home/
+Allow: /products/
+Allow: /contact/
+
+Allow: /set-language/
+Allow: /search/
+
+Disallow: /static/
+Disallow: /media/
+
+Sitemap: https://domain.com/sitemap.xml

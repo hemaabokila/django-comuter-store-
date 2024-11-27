@@ -1,0 +1,168 @@
+{% load static %}
+{% load i18n %}
+{% csrf_token %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Ezyat for comuter</title>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+		<link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+		<link type="text/css" rel="stylesheet" href="{% static 'css/slick.css' %}"/>
+		<link type="text/css" rel="stylesheet" href="{% static 'css/slick-theme.css' %}"/>
+		<link type="text/css" rel="stylesheet" href="{% static 'css/nouislider.min.css' %}"/>
+		<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+		<link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    </head>
+	<body>
+		<header>
+			<div id="top-header">
+				<div class="container">
+					<ul class="header-links pull-left">
+						<li><a href="#"><i class="fa fa-phone"></i> +21020687061</a></li>
+						<li><a href="#"><i class="fa fa-envelope-o"></i> ibrahemabokila@gmail.com</a></li>
+						<li><a href="#" onclick="changeLanguage('en')"><i class="fa fa-language"></i>English</a></li>
+						<li><a href="#" onclick="changeLanguage('ar')"><i class="fa fa-language"></i>العربية</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="header">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3">
+							<div class="header-logo">
+								<a href="#" class="logo">
+									<img src="{% static "img/logo.png" %}" alt="">
+								</a>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="header-search">
+								<form method="GET" action="{% url 'search' %}">
+									<input class="input" type="text" name="q" placeholder="{% trans "Search" %}..."  value="{{ request.GET.q }}">
+									<button type=" submit" class="search-btn">{% trans "Search" %}</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+
+		<nav id="navigation">
+			<div class="container">
+				<div id="responsive-nav">
+					<ul class="main-nav nav navbar-nav">
+						<li><a href="{% url 'home'%}">{% trans "Home" %}</a></li>
+						<li><a href="{% url 'productes'%}">{% trans "Products" %}</a></li>
+						<li><a href="{% url 'contact'%}">{% trans "Contact" %}</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		{% block body %}
+        {% endblock body %}
+
+		<footer id="footer">
+			<div class="section">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">{% trans "About Us" %}</h3>
+								<p>{% trans "Ezyat For Commuter’s And Laptops" %}</p>
+								<ul class="footer-links">
+									<li><a href="#"><i class="fa fa-phone"></i>+21020687061</a></li>
+									<li><a href="#"><i class="fa fa-envelope-o"></i>ibrahemabokila@gmail.com</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">{% trans "Sections" %}</h3>
+
+								<ul class="footer-links">
+									<li><a href="{% url 'home'%}">{% trans "Home" %}</a></li>
+									<li><a href="{% url 'productes'%}">{% trans "Products" %}</a></li>
+									<li><a href="{% url 'contact'%}">{% trans "Contact" %}</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="clearfix visible-xs"></div>
+					</div>
+				</div>
+			</div>
+			<div id="bottom-footer" class="section">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<span class="copyright">
+								<p>© 2024 Cryptodome - {% trans "All Rights Reserved" %}</p>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+		<script src="{% static 'js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'js/slick.min.js' %}"></script>
+		<script src="{% static 'js/nouislider.min.js' %}"></script>
+		<script src="{% static 'js/jquery.zoom.min.js' %}"></script>
+		<script src="{% static 'js/main.js' %}"></script>
+		<script>
+			function changeLanguage(lang) {
+				var form = document.createElement('form');
+				form.method = 'POST';
+				form.action = "{% url 'set_language' %}";
+				var csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+			
+				var inputLang = document.createElement('input');
+				inputLang.type = 'hidden';
+				inputLang.name = 'language';
+				inputLang.value = lang;
+				form.appendChild(inputLang);
+			
+				var csrfInput = document.createElement('input');
+				csrfInput.type = 'hidden';
+				csrfInput.name = 'csrfmiddlewaretoken';
+				csrfInput.value = csrfToken;
+				form.appendChild(csrfInput);
+			
+				document.body.appendChild(form);
+				form.submit();
+			}
+		</script>
+		<script>
+			function filterProducts() {
+				const selectedCategories = Array.from(document.querySelectorAll('input[name="category"]:checked')).map(el => el.value);
+				const selectedBrands = Array.from(document.querySelectorAll('input[name="brand"]:checked')).map(el => el.value);
+			
+				const url = new URL(window.location.href);
+				if (selectedCategories.length > 0) {
+					url.searchParams.set('category', selectedCategories.join(','));
+				} else {
+					url.searchParams.delete('category');
+				}
+			
+				if (selectedBrands.length > 0) {
+					url.searchParams.set('brand', selectedBrands.join(','));
+				} else {
+					url.searchParams.delete('brand');
+				}
+			
+				window.location.href = url.toString();
+			}
+		</script>
+			
+	</body>
+</html>

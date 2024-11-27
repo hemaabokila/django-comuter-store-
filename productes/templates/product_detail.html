@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% csrf_token %}
+{% block body %}
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-md-push-2">
+                <div id="product-main-img">
+                    <div class="product-preview">
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    </div>
+
+                    <div class="product-preview">
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    </div>
+
+                    <div class="product-preview">
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    </div>
+
+                    <div class="product-preview">
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2  col-md-pull-5">
+                <div id="product-imgs">
+                    <div class="product-preview">
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    </div>
+                    <div class="product-preview">
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    </div>
+                    <div class="product-preview">
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    </div>
+                    <div class="product-preview">
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="product-details">
+                    <h2 class="product-name">{{ product.name }}</h2>
+                    <div>
+                        <div class="product-rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="product-price">${{ product.prise }}<del class="product-old-price">${{ product.prise }}</del></h3>
+                        <span class="product-available">{% trans "In Stock" %}</span>
+                    </div>
+                    <p>{{ product.description }}</p>
+
+                    <div class="product-options">
+                        <label>
+                            {% trans "Color" %}
+                            <select class="input-select">
+
+                                <option value="0">{{ product.name }}</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="add-to-cart">
+                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i><a href="{% url 'contact'%}">{% trans "Contact" %}</a></button>
+                    </div>
+                    <ul class="product-links">
+                        <li>Category:</li>
+                        <li><a href="#">{{ product.category.name }}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}
